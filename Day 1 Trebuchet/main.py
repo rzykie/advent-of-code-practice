@@ -41,20 +41,20 @@ zoneight234
 7pqrstsixteen"""
 
 
-letters = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
+letters = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9}
 total_sum = 0
 
 def convert_to_digits(word):
-    for key, value in letters.items():
-        word = word.replace(key, str(value))
+    for number in sorted(letters, reverse=True):
+            word = word.replace(number, str(letters[number]))
     print(word)
     return word
 
 for line in s.split("\n"):
     line = convert_to_digits(line)
-    print(line)
+    # print(line)
     digits = [i for i in line if i.isdigit()]
-    print(digits)
+    # print(digits)
     if digits:
         total_sum += int(digits[0] + digits[-1])
 # for x in string_list:
@@ -62,4 +62,4 @@ for line in s.split("\n"):
 #     # print(new)
 #     y = new[0] + new[-1]
 #     total_sum += int(y)
-print(total_sum)
+# print(total_sum)
